@@ -1,6 +1,9 @@
 window.addEventListener("DOMContentLoaded", () => {
     const patterns = {
+        username: /^[a-z\d]{5,12}$/i,
         telephone: /^\d{11}$/,
+        password: /^[\w@-]{8,20}$/,
+        slug: /^[a-z\d-]{8,20}$/
     }
 
     const validate = (field, regex) => {
@@ -22,5 +25,5 @@ window.addEventListener("DOMContentLoaded", () => {
            const field = e.target;
            validate(field, patterns[field.name]);
         })
-    })
+    });
 })
